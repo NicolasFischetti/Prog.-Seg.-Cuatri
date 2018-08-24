@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1535063263 source:/home/alumno/Documentos/NIco-F-Practica/clase2/main.c
+	<stdio_ext.h>
+	<stdlib.h>
+
