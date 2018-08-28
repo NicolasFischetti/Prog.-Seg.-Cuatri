@@ -10,4 +10,14 @@
 /*Si hay una variable local con el mismo nombre en el main y una funcion, y el primero llama a esta funcion segunda funcion, cada variable actuan separadas porque ocupan un
 lugar dentro del stack propio.
 /* La varible local tiene mas peso sobre lo global*/
+/* scanf devuelve 1 , si se equivoca el usurio devuelve 0*/
+/* scanf no obtiene lo que le dijimos no toca el valor, queda el que estaba , no lo conocemos(basura) */
+/*  scanf en las variables no sabes que lugar ocupa*/
+/* Pasaje por referecia le paso la direccion de memoria ( puntero)
+/* Pasaje por valor (le paso el valor)
+/* le agrego el * al parametro y p a la variable para saber que es un puntero
+/* * para el valor
+/* & posicion de memoria
+
+
 
