@@ -13,19 +13,64 @@ lugar dentro del stack propio.
 /* La varible local tiene mas peso sobre lo global*/
 
 
+
+int validationAge(int age, int max, int min);
+int getAge();
+
 int main()
 {
-    int edad;
+    /*int edad;
     int* pEdad;
     edad = 5;
     pEdad = &edad;
     *pEdad = 8;
 
     printf("%d", edad);
-    printf("%d", *pEdad);
+    printf("%d", *pEdad);*/
+
+    int age;
+    int validationGetAge;
 
 
-    return 0;
+        age= getAge();
+        validationGetAge= validationAge(age,1,100);
+
+        printf("Su edad es: %d", age);
+
+
+
+}
+
+int getAge()  {
+
+    int age;
+    int returnAge;
+
+    printf("Ingrese su edad:");
+    scanf("%d", &age);
+    returnAge= validationAge(age,1,100);
+
+
+}
+
+int validationAge(int age, int min, int max) {
+
+    int counter = 0;
+
+    while(age < min || age > max) {
+
+    counter++;
+    if(counter == 2) {
+        break;
+      }
+     printf("Ingrese su edad nuevamente");
+     scanf("%d", &age);
+
+    }
+    if(counter == 2) {
+        age = -1;
+      }
+    return age;
 }
 
 
