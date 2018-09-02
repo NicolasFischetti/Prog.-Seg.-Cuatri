@@ -19,19 +19,103 @@ lugar dentro del stack propio.
 /* * para el valor
 /* & posicion de memoria
 
-DeterminaciÛn del valor a retornar: Finalmente resta definir cual ser· el tipo de
-dato que retorna la funciÛn. Al igual que en el punto anterior el valor a retornar va
-Ìntimamente relacionado con la tarea que realice la funciÛn.
-? El dato a buscar se lo paso a la funciÛn
-? El dato a buscar lo lee la funciÛn
+Determinaci√≥n del valor a retornar: Finalmente resta definir cual ser√° el tipo de
+dato que retorna la funci√≥n. Al igual que en el punto anterior el valor a retornar va
+√≠ntimamente relacionado con la tarea que realice la funci√≥n.
+? El dato a buscar se lo paso a la funci√≥n
+? El dato a buscar lo lee la funci√≥n
 
-Recursividad es el proceso de definir algo en tÈrminos de sÌ mismo. B·sicamente un problema
-podr· ser resuelto en forma recursiva si la soluciÛn se puede expresar en tÈrminos de sÌ
-misma, para obtener la soluciÛn deber· resolverse el mismo problema sobre un conjunto de
+Recursividad es el proceso de definir algo en t√©rminos de s√≠ mismo. B√°sicamente un problema
+podr√° ser resuelto en forma recursiva si la soluci√≥n se puede expresar en t√©rminos de s√≠
+misma, para obtener la soluci√≥n deber√° resolverse el mismo problema sobre un conjunto de
 datos de entrada menor.
-Se dice que una funciÛn es recursiva cuando se llama a sÌ misma. El lenguaje C soporta
-funciones recursivasEn la funciÛn se ve claramente que se vuelve a llamar a sÌ misma.
-Hay que tener muy presente que cada vez que la funciÛn se llama a sÌ misma, se est·
-utilizando memoria en la pila del programa , que en alg˙n momento se debe liberar. Es decir
-que en alg˙n momento la funciÛn debe comenzar a retornar.
+Se dice que una funci√≥n es recursiva cuando se llama a s√≠ misma. El lenguaje C soporta
+funciones recursivasEn la funci√≥n se ve claramente que se vuelve a llamar a s√≠ misma.
+Hay que tener muy presente que cada vez que la funci√≥n se llama a s√≠ misma, se est√°
+utilizando memoria en la pila del programa , que en alg√∫n momento se debe liberar. Es decir
+que en alg√∫n momento la funci√≥n debe comenzar a retornar.
+
+ARRAY
+
+Un vector o array es un conjunto de elementos del mismo tipo (enteros, flotantes, caracteres)
+que se agrupan bajo un mismo nombre y se diferencian entre s√≠ por un √≠ndice.
+Donde tipo es el tipo de dato, por ejemplo int, float, char, etc.
+‚Äúnombre‚Äù es el nombre del vector y ‚Äúcantidad‚Äù es la cantidad de elementos que contiene el
+vector.
+Para llenar un vector con valores (cargar), existen 2 formas que son la secuencial y la
+aleatoria.
+En la carga secuencial se carga el vector ordenadamente, es decir el primero despu√©s el
+segundo, el tercero y as√≠ hasta llegar al √∫ltimo.
+En la carga aleatoria no existe un orden establecido, por lo tanto se debe informar el n√∫mero a
+cargar y en que posici√≥n del vector se carga.
+Para encontrar el mayor elemento dentro de un vector lo primero que hacemos es tomar uno
+cualquiera de los elementos del mismo y suponer que es el mayor. Luego comparando cada
+elemento del vector contra el valor de la variable mayor, que es actualizado mientras se
+recorre el vector , se llega al final del vector con el mayor elemento guardado en la variable
+mayor
+
+ B√∫squeda del mayor
+//buscar mayor
+mayor=vec[0];
+for(i=0;i<MAX;i++)
+{
+if(vec[i]>mayor)
+{
+mayor=vec[i];
+/* otras asignaciones */
+}
+} 
+
+B√∫squeda del menor
+//buscar menor
+menor=vec[0];
+for(i=0;i<MAX;i++)
+{
+if(vec[i]<menor)
+{
+menor=vec[i];
+/* otras asignaciones */
+}
+}
+
+B√∫squeda de un n√∫mero dentro del vector
+ //buscar un numero dentro del vector
+flag=0;
+printf("Ingrese numero a buscar");
+scanf("%d",&num);
+for(i=0;i<MAX;i++)
+{
+if(num==vec[i])
+{
+/* asignaciones y modificaciones */
+printf("Se encontro el numero");
+flag=1;
+}
+}
+if(flag==0)
+printf("El numero no se encontro");
+Para buscar un n√∫mero dentro de un vector, lo debemos recorrer y preguntar si el elemento
+del vector es igual al n√∫mero ingresado.
+De acuerdo a esto surge que para recorrer el vector debemos colocar un for y dentro del
+mismo un if para preguntar por la igualdad.
+
+El problema a resolver es c√≥mo se da cuenta el programa que el n√∫mero no est√° en el vector.
+La respuesta es EL PROGRAMA NO TIENE FORMA DE SABER QUE EL N√öMERO NO ESTA EN EL
+VECTOR, pero si sabe cuando lo encuentra.
+De acuerdo a esto podemos decir que si el programa nunca entro al if (despues de recorrer
+todo el vector) significa que no lo encontr√≥ y entonces la soluci√≥n es colocar una bandera
+dentro del if. El c√≥digo es el siguiente:
+flag=0; // Supongo que el n√∫mero no lo encuentro
+printf("Ingrese numero a buscar");
+scanf("%d",&num);
+for(i=0;i<MAX;i++)
+{
+if(num==vec[i])
+{
+printf("Se encontro el numero");
+flag=1; // si lo encontro, pongo el flag en 1
+}
+}
+if(flag==0)
+printf("El numero no se encontro");
 
