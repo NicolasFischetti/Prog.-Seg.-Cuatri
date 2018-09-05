@@ -7,6 +7,7 @@ int returnTotal(int note[], int longList, int maxResult);
 int returnAverage(int note[], int longNote, int aveResult);
 void returnAverageInfo(int noteList[], int QUANTITY, int aveResult, int resultNumberMax);
 void returnTotalInfo(int note[], int QUANTITY, int maxResultTotal);
+int numberMax(int note[], int longNote, int resultNumberMax);
 
 
 int main()
