@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1536713130 source:/home/alumno/Descargas/Prog.-Seg.-Cuatri/Clase7_mail/main.c
+	<stdio.h>
+	<stdlib.h>
+
