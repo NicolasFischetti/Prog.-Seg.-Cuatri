@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1536708481 source:/home/alumno/Descargas/Prog.-Seg.-Cuatri/Clase_7/main.c
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+
