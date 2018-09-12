@@ -61,3 +61,10 @@ de caracteres que tiene la cadena (los espacios tambien son contados).
 int strlen (vec)
 El argumento de la función es la dirección de comienzo del vector que tiene los datos.
 Ejemplo: Cargar un vector con una palabra y mostrar la cantidad de caracteres que tiene.
+
+%p posicion de memoria
+strlen te devuelve la cantidad de bits usados
+fgets() funcion interna: puntero almacena la direcion de memoria, no le importa el array definido, si gets tiene 30 caracterres lee hasta los 30. Necesita tener el mismo tamaño del array.
+__fpurge() #include <stdio_ext.h>
+
+strcmp compara bytes. La suma del opuesto. 9 + - 7
