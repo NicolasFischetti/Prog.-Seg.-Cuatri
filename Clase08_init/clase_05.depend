@@ -81,3 +81,17 @@
 	<stdlib.h>
 	"utn.h"
 
+1536883479 source:/home/alumno/Descargas/Prog.-Seg.-Cuatri/Clase08_init/utn.c
+	<stdio_ext.h>
+	<string.h>
+	<stdlib.h>
+	"utn.h"
+
+1536878833 /home/alumno/Descargas/Prog.-Seg.-Cuatri/Clase08_init/utn.h
+
+1536886586 source:/home/alumno/Descargas/Prog.-Seg.-Cuatri/Clase08_init/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
