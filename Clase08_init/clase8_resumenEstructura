@@ -1,0 +1,112 @@
+ Hasta el momento solo sabemos agrupar datos que sean del mismo tipo (creando un
+array), la idea es que por una cuestión de practicidad y para facilitar el manejo de gran
+cantidad de información, se pueda agrupar de alguna forma datos que sean de diferentes
+tipos.
+Esta forma de agrupar datos es conocida en el lenguaje C con el nombre de estructuras de
+datos.
+
+Una estructura de datos es un conjunto de variables de distinto tipo a la cuál se hace
+referencia bajo un mismo nombre.Debemos tener en cuenta que la estructura es un tipo de dato definido por el usuario y por lo
+tanto puede tener la cantidad de variables que se crean convenientes.
+A las variables dentro de la estructura se las suele llamar “miembro de la estructura” o
+“campo”
+
+struct nombre {
+tipo variable_1;
+tipo variable_2;
+// ...
+tipo variable_n;
+};
+
+Donde struct es la palabra reservada que le indica al compilador que se esta declarando una
+estructura.
+
+Si tomamos el ejemplo mencionado anteriormente, donde está la estructura remedio y la
+variable “medic1” y queremos cargar el precio, se debería escribir de la siguiente forma:
+
+medic1.precio=10.25;
+strcpy ( medic1.laboratorio , "Bayer" );
+strcpy ( medic1.nombre , "Aspirina" );
+
+Aquí cargamos la estructura completa asignando a cada campo un valor. En el caso en que se
+deba ingresar el dato desde el teclado (normalmente se da esta situación) se escribirá lo
+siguiente:
+
+scanf ( "%f" , &medic1.precio );
+gets (medic1.laboratorio);
+scanf ( "%s" , medic1.nombre);
+
+Cuando se cargaba una cadena de caracteres en un vector, no se usaba “&”, por lo tanto
+cuando se tenga que cargar un vector que se encuentra dentro de una estructura, tampoco se
+debe usar el “&”.
+
+void main (void)
+{
+struct alumno alu[20];
+for(i=0;i<20;i++)
+{
+printf("Ingrese nombre: ");
+gets(alu[i].nombre);
+printf("Ingrese nota: ");
+scanf("%d",&alu[i].nota);
+fflush(stdin);
+}
+// ...
+}
+
+La forma de cargar el vector es la misma que cuando se carga un vector de enteros, la
+diferencia es que por cada elemento del vector debo cargar todos los campos de la estructura.
+
+Se puede realizar la asignación de una estructura a otra siempre y cuando las 2 estructuras
+tengan el mismo formato.
+Ejemplo 1
+Cargar una variable estructura para luego copiar los datos a una segunda estructura
+#include <stdio.h>
+struct alumno {
+char nombre[20];
+int nota;
+};
+void main(void)
+{
+struct alumno alu1 , alu2;
+printf("Ingrese nombre");
+gets(alu1.nombre);
+printf("Ingrese nota");
+scanf("%d",&alu1.nota);
+alu2=alu1;
+}
+
+Por lo tanto, se debe tener en cuenta que siempre que necesite realizar comparaciones entre 2
+variables estructura será necesario establecer el criterio de comparación.
+Todos los operadores relacionales (usados para comparar) que fueron utilizados hasta el
+momento son aplicables a la comparación entre los campos de la estructura. En definitiva lo
+que se está haciendo es comparar 2 variables simples, ya que con el operador punto se llega a
+la variable, ejemplos:
+if ( alu1.nota == alu2.nota)
+if (alu2.nota < alu1.nota )
+if ( ¡ strcmp ( alu1.nombre , alu2.nombre))
+
+#define MAX 10
+struct alumno {
+char nombre[20];
+int nota;
+};
+void main(void)
+{
+struct alumno pers[MAX],aux;
+// ...
+for(i=0;i<MAX-1;i++)
+for(j=i+1;j<MAX;j++)
+if((strcmp(pers[i].nombre,pers[j].nombre))<0)
+{
+aux=pers[i];
+pers[i]=pers[j];
+pers[j]=aux;
+}
+// ...
+}
+Notas:
+• Los campos de una estructura pueden ser cualquiera de los tipos de variables conocidas
+(char , int , float , double) y tambien pueden ser vectores , matrices o punteros.
+• No se puede tener como estructura anidada a la misma estructura que se esta
+definiendo 
