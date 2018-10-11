@@ -68,3 +68,9 @@ fgets() funcion interna: puntero almacena la direcion de memoria, no le importa 
 __fpurge() #include <stdio_ext.h>
 
 strcmp compara bytes. La suma del opuesto. 9 + - 7
+
+Malloc espacio coniguo. NOs da una cantidad de byte. NO hay nada en le medio. Si devuelve puntero null salio mal, sino todo bien devuelve un puntero casting. Puedo administrar la memoria como quiero.
+Free autoriza a malloc , le resta uno al puntero y se fija para otorgar un lugar.
+Realloac te libera zona y recorre toda la zona de memoria hasta que encuentra espacio. No es performance. Le das un puntero previamente alocado por malloc. Devuelve null pero no te rompe lo demas(null), sino puede no puede, buscar la cantidad que se pide.
+Free libera lo que dejo malloc libre.  
+
